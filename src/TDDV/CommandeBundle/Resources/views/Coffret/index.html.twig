@@ -1,0 +1,49 @@
+{% extends '::layout.html.twig' %}
+
+{% block body -%}
+    <h1>Coffret list</h1>
+
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Prix</th>
+                <th>Datedebut</th>
+                <th>Datefin</th>
+                <th>Theme</th>
+                <th>Nombrecd</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('coffret_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.prix }}</td>
+                <td>{% if entity.dateDebut %}{{ entity.dateDebut|date('d-m-Y') }}{% endif %}</td>
+                <td>{% if entity.dateFin %}{{ entity.dateFin|date('d-m-Y') }}{% endif %}</td>
+                <td>{{ entity.theme }}</td>
+                <td>{{ entity.nombreCd }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('coffret_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('coffret_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('coffret_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

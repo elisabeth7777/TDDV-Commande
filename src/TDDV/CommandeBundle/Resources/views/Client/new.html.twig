@@ -1,0 +1,6 @@
+{% extends "::layout.html.twig" %}
+{% form_theme form 'TDDVCommandeBundle:Form:fields.html.twig' %}
+{% block title -%}Ajouter un nouveau Client{% endblock %}
+{% block body -%}
+{{ form(form) }}
+{% endblock %}

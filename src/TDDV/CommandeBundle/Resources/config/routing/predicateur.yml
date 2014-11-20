@@ -1,0 +1,34 @@
+predicateur:
+    pattern:  /
+    defaults: { _controller: "TDDVCommandeBundle:Predicateur:index" }
+
+predicateur_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "TDDVCommandeBundle:Predicateur:show" }
+
+predicateur_new:
+    pattern:  /new
+    defaults: { _controller: "TDDVCommandeBundle:Predicateur:new" }
+
+predicateur_create:
+    pattern:  /create
+    defaults: { _controller: "TDDVCommandeBundle:Predicateur:create" }
+    requirements: { _method: post }
+
+predicateur_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "TDDVCommandeBundle:Predicateur:edit" }
+
+predicateur_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "TDDVCommandeBundle:Predicateur:update" }
+    requirements: { _method: post|put }
+
+predicateur_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "TDDVCommandeBundle:Predicateur:delete" }
+    requirements: { _method: post|delete }
+
+predicateur_erase:
+    pattern:  /{id}/erase
+    defaults: { _controller: "TDDVCommandeBundle:Predicateur:erase" }

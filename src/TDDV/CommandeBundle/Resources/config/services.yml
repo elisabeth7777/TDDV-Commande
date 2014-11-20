@@ -1,0 +1,11 @@
+parameters:
+#    tddv_commande.example.class: TDDV\CommandeBundle\Example
+
+services:
+  form.type.datePicker:
+    class: TDDV\TDDVCommandeBundle\Form\Type\DatePickerType
+    tags:
+      - { name: form.type, alias: datePicker }
+#    tddv_commande.example:
+#        class: %tddv_commande.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

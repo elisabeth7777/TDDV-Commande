@@ -1,0 +1,31 @@
+tddv_commande_homepage:
+    pattern:  /
+    defaults: { _controller: TDDVCommandeBundle:Default:index }
+
+TDDVCommandeBundle_client:
+        resource: "@TDDVCommandeBundle/Resources/config/routing/client.yml"
+        prefix:   /client
+        
+TDDVCommandeBundle_coffret:
+        resource: "@TDDVCommandeBundle/Resources/config/routing/coffret.yml"
+        prefix:   /coffret
+        
+TDDVCommandeBundle_commande:
+        resource: "@TDDVCommandeBundle/Resources/config/routing/commande.yml"
+        prefix:   /commande 
+        
+TDDVCommandeBundle_message:
+        resource: "@TDDVCommandeBundle/Resources/config/routing/message.yml"
+        prefix:   /message
+       
+TDDVCommandeBundle_predicateur:
+        resource: "@TDDVCommandeBundle/Resources/config/routing/predicateur.yml"
+        prefix:   /predicateur
+
+TDDVCommandeBundle_predication:
+        resource: "@TDDVCommandeBundle/Resources/config/routing/predication.yml"
+        prefix:   /predication
+        
+TDDVCommandeBundle_produit:
+        resource: "@TDDVCommandeBundle/Resources/config/routing/produit.yml"
+        prefix:   /produit

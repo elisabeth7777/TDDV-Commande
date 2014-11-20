@@ -1,0 +1,30 @@
+coffret:
+    pattern:  /
+    defaults: { _controller: "TDDVCommandeBundle:Coffret:index" }
+
+coffret_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "TDDVCommandeBundle:Coffret:show" }
+
+coffret_new:
+    pattern:  /new
+    defaults: { _controller: "TDDVCommandeBundle:Coffret:new" }
+
+coffret_create:
+    pattern:  /create
+    defaults: { _controller: "TDDVCommandeBundle:Coffret:create" }
+    requirements: { _method: post }
+
+coffret_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "TDDVCommandeBundle:Coffret:edit" }
+
+coffret_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "TDDVCommandeBundle:Coffret:update" }
+    requirements: { _method: post|put }
+
+coffret_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "TDDVCommandeBundle:Coffret:delete" }
+    requirements: { _method: post|delete }

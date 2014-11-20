@@ -1,0 +1,34 @@
+message:
+    pattern:  /
+    defaults: { _controller: "TDDVCommandeBundle:Message:index" }
+
+message_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "TDDVCommandeBundle:Message:show" }
+
+message_new:
+    pattern:  /new
+    defaults: { _controller: "TDDVCommandeBundle:Message:new" }
+
+message_create:
+    pattern:  /create
+    defaults: { _controller: "TDDVCommandeBundle:Message:create" }
+    requirements: { _method: post }
+
+message_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "TDDVCommandeBundle:Message:edit" }
+
+message_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "TDDVCommandeBundle:Message:update" }
+    requirements: { _method: post|put }
+
+message_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "TDDVCommandeBundle:Message:delete" }
+    requirements: { _method: post|delete }
+
+message_erase:
+    pattern:  /{id}/erase
+    defaults: { _controller: "TDDVCommandeBundle:Message:erase" }

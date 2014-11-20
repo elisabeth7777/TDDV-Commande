@@ -1,0 +1,43 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}Client{% endblock %}
+{% block sub_title -%}Liste de clients{% endblock %}
+{% block new_breadcrumb %}
+<li>
+    <i class="fa fa-angle-right"></i>
+        <a href="{{ path('client') }}">Client</a>
+</li>
+{% endblock %}    
+{% block body -%}
+    <p><a class="btn btn-lg btn-primary" href="{{ path('client_new') }}"><i class="fa fa-plus-circle"></i> Ajouter un nouveau client</a></p>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('client_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nom }}</td>
+                <td>{{ entity.prenom }}</td>
+                <td>
+                    <div class="col-xs-4">
+                        <i class="fa fa-eye"></i><a href="{{ path('client_show', { 'id': entity.id }) }}"> Détails</a>
+                    </div>
+                    <div class="col-xs-4">
+                        <i class="fa fa-edit"></i><a href="{{ path('client_edit', { 'id': entity.id }) }}"> Modifier</a>
+                    </div>
+                    <div class="col-xs-4">
+                        <i class="fa fa-eraser"></i><a href="{{ path('client_erase', { 'id': entity.id }) }}"> Supprimer</a>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}

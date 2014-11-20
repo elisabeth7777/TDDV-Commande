@@ -1,0 +1,44 @@
+{% extends '::layout.html.twig' %}
+{% block header_body -%}
+    <h1>Liste des Messages</h1>
+{% endblock %}
+    
+{% block body -%}
+    <p><a class="btn btn-lg btn-primary" href="{{ path('message_new') }}"><i class="fa fa-plus-circle"></i> Ajouter une nouvelle prédication</a></p>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Date Shalom</th>
+                <th>Date TDDV</th>
+                <th>Prédicateur</th>
+                <th>Titre</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('message_show', { 'id': entity.id }) }}">{{ entity.numeroCd }}</a></td>
+                <td>{% if entity.dateShalom %}{{ entity.dateShalom|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if entity.dateTDDV %}{{ entity.dateTDDV|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ entity.predicateur.infos }}</td>
+                <td>{{ entity.titre }}</td>            
+                <td>{{ entity.type|upper }}</td>
+                <td>
+                    <div class="col-xs-4">
+                        <a href="{{ path('message_show', { 'id': entity.id }) }}"><i class="fa fa-eye"></i></a>
+                    </div>
+                    <div class="col-xs-4">
+                        <a href="{{ path('message_edit', { 'id': entity.id }) }}"><i class="fa fa-edit"></i></a>
+                    </div>
+                    <div class="col-xs-4">
+                        <a href="{{ path('message_erase', { 'id': entity.id }) }}"><i class="fa fa-eraser"></i></a>
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}

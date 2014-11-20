@@ -1,0 +1,10 @@
+{% extends '::layout.html.twig' %}
+{% form_theme form 'TDDVCommandeBundle:Form:fields.html.twig' %}
+{% block title -%}Produit creation{% endblock %}
+{% block body -%}
+{{ form(form) }}
+        <a href="{{ path('produit') }}">
+            Back to the list
+        </a>
+
+{% endblock %}

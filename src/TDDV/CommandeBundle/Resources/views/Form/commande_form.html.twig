@@ -1,0 +1,10 @@
+
+ 
+{% block collection_widget %}
+{% spaceless %}
+    {% if prototype is defined %}
+        {% set attr = attr|merge({'data-prototype': '<tr><td>' ~ form_widget(prototype.produit) ~ '</td><td>' ~ form_widget(prototype.quantite) ~ '</td><td>X</td>'  }) %}
+    {% endif %}
+    {{ block('form_widget') }}
+{% endspaceless %}
+{% endblock collection_widget %}

@@ -1,0 +1,9 @@
+{% extends "::layout.html.twig" %}
+{% form_theme edit_form 'TDDVCommandeBundle:Form:fields.html.twig' %}
+{% block title -%}Modifier Predicateur{% endblock %}
+{% block body -%}
+{{ form(edit_form) }}
+        <a href="{{ path('predicateur') }}">
+            Back to the list
+        </a>
+{% endblock %}

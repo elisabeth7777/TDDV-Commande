@@ -1,0 +1,32 @@
+{% extends '::layout.html.twig' %}
+{% form_theme form 'TDDVCommandeBundle:Form:fields.html.twig' %}
+{% block title -%}Message creation{% endblock %}
+{% block body -%}
+{{ form(form) }}
+        <a href="{{ path('message') }}">
+            Back to the list
+        </a>
+ 
+{% endblock %}
+{% block javascripts %}
+<script type="text/javascript">
+        jQuery(function($) {
+         
+            $(document).ready(function(){
+                
+                $("#tddv_commandebundle_messagetype_dateShalom").datepicker({
+                    numberOfMonths: 2,
+                    onSelect: function(selected) {
+                      $("#tddv_commandebundle_messagetype_dateTDDV").datepicker("option","minDate", selected)
+                    }
+                }).attr("readonly","readonly");;
+                $("#tddv_commandebundle_messagetype_dateTDDV").datepicker({ 
+                    numberOfMonths: 2,
+                    onSelect: function(selected) {
+                       $("#tddv_commandebundle_messagetype_dateShalom").datepicker("option","maxDate", selected)
+                    }
+                }).attr("readonly","readonly");;  
+            });            
+        });
+    </script>
+{% endblock %}

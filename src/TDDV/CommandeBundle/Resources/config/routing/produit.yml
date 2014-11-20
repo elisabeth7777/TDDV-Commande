@@ -1,0 +1,30 @@
+produit:
+    pattern:  /
+    defaults: { _controller: "TDDVCommandeBundle:Produit:index" }
+
+produit_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "TDDVCommandeBundle:Produit:show" }
+
+produit_new:
+    pattern:  /new
+    defaults: { _controller: "TDDVCommandeBundle:Produit:new" }
+
+produit_create:
+    pattern:  /create
+    defaults: { _controller: "TDDVCommandeBundle:Produit:create" }
+    requirements: { _method: post }
+
+produit_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "TDDVCommandeBundle:Produit:edit" }
+
+produit_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "TDDVCommandeBundle:Produit:update" }
+    requirements: { _method: post|put }
+
+produit_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "TDDVCommandeBundle:Produit:delete" }
+    requirements: { _method: post|delete }

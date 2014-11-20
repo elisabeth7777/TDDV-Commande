@@ -1,0 +1,18 @@
+{% extends "::layout.html.twig" %}
+{% block body -%}
+YEs {{ test }}
+{% if entities %}
+    {% for predication in entities %}
+        <tr>
+            <td>{{ predication.message.numeroCd }}</td>
+            <td>{% if predication.message.dateShalom %}{{ predication.message.dateShalom|date('d/m/Y') }}{% endif %}</td>
+            <td>{% if predication.message.dateTDDV %}{{ predication.message.dateTDDV|date('d/m/Y') }}{% endif %}</td>
+            <td>{{ predication.message.predicateur.infos }}</td>
+            <td>{{ predication.message.titre }}</td>            
+            <td>{{ predication.message.type|upper }}</td>
+            <td>{{ predication.prix }}</td>
+        </tr>
+    {% endfor %}
+{% endif %}
+                        {% endblock %}
+                      
